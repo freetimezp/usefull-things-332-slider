@@ -42,9 +42,14 @@ function createSlides() {
         const slide = document.createElement("div");
         slide.className = "slide";
 
+        const base =
+            (import.meta.env && import.meta.env.BASE_URL) !== undefined
+                ? import.meta.env.BASE_URL
+                : "/usefull-things-332-slider/";
+
         const img = document.createElement("img");
         const imageNumber = (i % totalSlides) + 1;
-        img.src = `./src/assets/images/slide-${imageNumber}.jpg`;
+        img.src = `${base}src/assets/images/slide-${imageNumber}.jpg`;
 
         slide.appendChild(img);
         slider.appendChild(slide);
